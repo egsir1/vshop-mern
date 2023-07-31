@@ -1,41 +1,37 @@
 import mongoose from "mongoose";
 
-const reviewSchema = mongoose.Schema(
-  {
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    rating: {
-      type: Number,
-      required: true,
-    },
-    comment: {
-      type: String,
-      reqired: true,
-    },
-  },
-  { timestamps: true }
-);
+// const reviewSchema = mongoose.Schema(
+//   {
+//     user: {
+//       type: mongoose.Schema.Types.ObjectId,
+//       required: true,
+//       ref: "User",
+//     },
+//     name: {
+//       type: String,
+//       required: true,
+//     },
+//     rating: {
+//       type: Number,
+//       required: true,
+//     },
+//     comment: {
+//       type: String,
+//       reqired: true,
+//     },
+//   },
+//   { timestamps: true }
+// );
 
 const productSchema = new mongoose.Schema(
   {
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
+    // user: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   required: true,
+    //   ref: "User",
+    // },
     name: {
-      type: {
-        en: String,
-        kr: String,
-        uz: String,
-      },
+      type: String,
       required: true,
       unique: true,
     },
@@ -52,14 +48,10 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     description: {
-      type: {
-        en: String,
-        kr: String,
-        uz: String,
-      },
+      type: String,
       required: true,
     },
-    reviews: [reviewSchema],
+    // reviews: [reviewSchema],
     rating: {
       type: Number,
       required: true,

@@ -7,17 +7,25 @@ import axios from "axios";
 
 const ProductScreen = () => {
   const [product, setProduct] = useState({});
+
   const { id: productId } = useParams();
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const { data } = await axios.get(`/api/products/${productId}`);
-      setProduct(data);
+      const data = await axios.get(`/api/products/${productId}`);
+      setProduct(data.data.data);
+      console.log(
+        "🚀 ~ file: ProductScreen.jsx:16 ~ fetchProduct ~ data:",
+        data
+      );
     };
 
     fetchProduct();
   }, [productId]);
-
+  console.log(
+    "🚀 ~ file: ProductScreen.jsx:10 ~ ProductScreen ~ product:",
+    product
+  );
   return (
     <>
       <Link className="btn btn-light my-3" to="/">

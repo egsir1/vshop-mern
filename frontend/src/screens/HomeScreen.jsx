@@ -10,13 +10,13 @@ const HomeScreen = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get("/api/products");
-      setProducts(data);
-      //   console.log(data);
+      setProducts(data.data);
+      console.log(data);
     };
 
     fetchProducts();
   }, []);
-  //   console.log(products);
+  console.log("products:::", products);
   return (
     <>
       <h1>Latest Products</h1>
